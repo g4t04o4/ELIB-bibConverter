@@ -1,0 +1,13 @@
+$(document).ready(function () {
+  // Nav btn click
+  $('.new-nav-btn').click(function () {
+    $(this).toggleClass('toggled');
+    $('body, #topMenu, .new-mask').toggleClass('toggled');
+  });
+
+  // Nav mask click
+  $('.new-mask').click(function () {
+    $(this).toggleClass('toggled');
+    $('body, #topMenu, .new-nav-btn').toggleClass('toggled');
+  });
+});

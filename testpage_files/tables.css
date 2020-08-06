@@ -1,0 +1,127 @@
+﻿table
+{
+	border-collapse: collapse;
+	border-style: none;
+	border-width: 0;
+}
+
+table.mainTable, table.dataTable
+{
+    margin: 0 0 10px 0;
+    width: 100%;
+}
+
+table.securityTable, table.statTable
+{
+	border-style: solid;	    
+	border-width: 1px;    
+	margin: 2px 2px 2px 2px;
+}
+
+table.mainTable th, table.mainTable td, table.securityTable th, table.securityTable td, table.statTable th, table.statTable td
+{
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 1px;
+    border-style: solid;
+}
+
+table.dataTable th, table.dataTable td
+{
+    border-width: 1px;
+    border-style: solid;
+}
+
+table.statTable th, table.statInfoTable th, table.mainTable th, table.dataTable th
+{
+	padding: 6px;
+	text-align: center;
+}
+
+table.securityTable th
+{
+	padding: 6px;
+	text-align: left;
+}
+
+table.mainTable td, table.dataTable td, table.securityTable td, table.statTable td
+{
+	padding: 4px;
+}
+
+table.mainTable td, table.dataTable td
+{
+    vertical-align: top;
+}
+
+table.securityTable td
+{
+	white-space: nowrap;
+}
+
+table.securityTable a
+{
+    text-decoration: none;
+}
+
+table.statTable th.n1, table.statTable td.n1
+{
+    border-right-width: 1px;
+}
+
+table.statTable th.n2, table.statTable td.n2
+{
+    border-left-width: 1px;
+    border-right-width: 1px;    
+}
+
+table.statTable th.n3, table.statTable td.n3
+{
+    border-left-width: 1px;
+}
+
+table.statTable td.number
+{
+    text-align: center;
+}
+
+table.dataTable td.center
+{
+    text-align: center;
+}
+
+
+/* --- Colors --- */
+table.mainTable, table.dataTable
+{
+	border-color: #D4D7DA;
+}
+
+table.securityTable, table.statTable
+{
+	border-color: #3E8ED1;
+}
+
+table.mainTable th, table.mainTable td, table.dataTable th, table.dataTable td
+{
+	border-color: #D4D7DA;
+}
+
+table.securityTable th, table.securityTable td, table.statTable th, table.statTable td
+{
+	border-color: #3E8ED1;
+}
+
+table tr.selected
+{
+	background-color: #DBEFFF;
+}
+
+table.dataTable td.error
+{
+    color: Red;
+}
+
+
+/* --- Font sizes --- */

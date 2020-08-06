@@ -1,0 +1,32 @@
+﻿.favoritePanel
+{
+    min-height: 44px;
+    float: right;
+}
+
+.favoritePanel img
+{
+    border-style: solid;
+    /*border-width: 1px;*/
+    padding: 5px 5px 5px 5px;
+}
+
+.favoritePanelImageAdd
+{
+    cursor: pointer;
+}
+
+
+/* --- Colors --- */
+
+.favoritePanel img
+{
+    border-color: #C0C0C0;
+}
+
+.favoritePanelMessage
+{
+    color: #770000;
+}
+
+/* --- Font sizes --- */
