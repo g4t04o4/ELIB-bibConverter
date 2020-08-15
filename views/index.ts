@@ -1,5 +1,5 @@
 import { Application } from 'express';
-import axios from 'axios';
+import { getItems } from '../external_queries';
 
 const withValue = (value: string | undefined) => 
     (name: string) => `value="${name}"${ value === name ? ' selected' : ''}`;
@@ -9,30 +9,21 @@ export default function (app: Application) {
         const answer = req.query.answer as string | undefined;
         const query = req.query.query as string | undefined;
         const withOption = withValue(answer);
-        let data: any[] | null | string = null;
+        let data: any | null = null;
+        let error: string | null = null;
         if (answer || query)
         try {
-            const result = await axios.get('https://ruslan.library.spbstu.ru/rrs-web/db/BOOKS+SERIAL+ANALITS2005+ANALITS2009+AVD+SERETR+DISSER+EBOOKS+EDU+ERES+IVTOB+ICONOGRAPHY+TEU_AREF',
-            {
-                params: {
-                    query: `cql.allIndexes all ${query}`,
-                    queryType: 'cql',
-                    startRecord: 1,
-                    maximumRecords: 10,
-                    recordSchema: 'gost-7.0.100-brief'
-                }
-            });
-            data = result.data;
-        } catch (error) {
-            data = 'Ошибка запроса';
-            console.log(error);
+            data = await getItems(answer, query);
+        } catch (err) {
+            error = 'Ошибка запроса';
+            console.log(err);
         }
         let table = '';
-        if (data) {
-            if (typeof(data) === "string") table = `<p>data</p>`;
-            else {
-                table = JSON.stringify(data);
-            }
+        if (error) {
+            table = `<p style="color: red">${error}</p>`;
+        }
+        else if (data) {
+            table = JSON.stringify(data);
         }
         const template =
 `<!DOCTYPE html>
