@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ELIB-bibConverter</title>
+</head>
+
+<body>
+    <h1>ELIB-bibConverter</h1>
+    <!-- <div id="form">
+        <select id="param" name="param">
+            <option value="author">Author</option>
+            <option value="title">Title</option>
+            <option value="year">Year</option>
+            <option value="bookID">ID</option>
+        </select>
+        <input type="text" id="query" name="query" />
+        <button type="button" id="button">Search</button>
+    </div> -->
+
+    <form onsubmit="function f(e) {e.preventDefault(); alert(JSON.stringify(e)); return e;}">
+        <p><input type="radio" name="answer" value="author">Author<br>
+            <input type="radio" name="answer" value="title">Title<br>
+            <input type="radio" name="answer" value="year">Year<br>
+            <input type="radio" name="answer" value="bookID">BookID</p>
+
+        <input type="text" id="query" name="query">
+
+        <p><input type="submit"></p>
+    </form>
+
+    <table id="result"></table>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,0 @@
-﻿
-var FAVORITE_AddToFavourite = "Добавить в избранное";
-var FAVORITE_AlreadyInFavourite = "Документ уже в избранном";
-var FAVORITE_Refreshing = "Обновление...";
-
