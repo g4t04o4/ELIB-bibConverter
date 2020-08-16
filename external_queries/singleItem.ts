@@ -1,6 +1,8 @@
 import axios from "axios";
 
-export type ItemMetainfo = {};
+export type ItemMetainfo = {
+  // TODO: add type
+};
 
 type ItemResponse = {
   info: ItemMetainfo

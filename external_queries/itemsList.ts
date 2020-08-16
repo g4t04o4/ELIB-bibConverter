@@ -1,6 +1,8 @@
 import axios from "axios";
 
-export type ListItem = {};
+export type ListItem = {
+  // TODO: add type
+};
 
 type ItemsResponse = {
   numberOfRecords: number;
