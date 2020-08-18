@@ -22,16 +22,15 @@ const renderFilter = (answer: string | undefined, query: string | undefined): st
 } 
 
 const renderRow = (item: ListItem) => {
-  // TODO: add row rendering
-  return `<div>${JSON.stringify(item)}</div>`;
+  // TODO: improve row rendering
+  return `<div class="row">${JSON.stringify(item)}</div>`;
 }
 
 const renderTable = (items: ListItem[] | null, error: string | null): string => {
   if (error) {
     return `<p style="color: red">${error}</p>`;
   } else if (items) {
-    //return items.map(renderRow).join();
-    return JSON.stringify(items);
+    return items.map(renderRow).join('');
   } else {
     return "";
   }
@@ -45,6 +44,9 @@ const renderPage = (answer: string | undefined, query: string | undefined, items
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ELIB-bibConverter</title>
+  <style>
+  .row { margin: 1em; }
+  </style>
 </head>
 <body>
   <h1>ELIB-bibConverter</h1>

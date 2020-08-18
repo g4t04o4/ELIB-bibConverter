@@ -11,17 +11,31 @@ type ItemsResponse = {
   };
 };
 
+const answersToIndices = (answer: string | undefined): string => {
+  switch (answer) {
+    case "author":
+      return "dc.creator";
+    case "title":
+      return "dc.title";
+    case "year":
+      return "bib.dateIssued";
+    case "bookID":
+      return "dc.identifier";
+    default:
+      return "cql.allIndexes";
+  }
+};
+
 export const getItems = async (
   answer: string | undefined,
   query: string | undefined
 ): Promise<ListItem[]> => {
-  // TODO: answer handling
   // TODO: pagination
   const result = await axios.get<ItemsResponse>(
     "https://ruslan.library.spbstu.ru/rrs-web/db/BOOKS+SERIAL+ANALITS2005+ANALITS2009+AVD+SERETR+DISSER+EBOOKS+EDU+ERES+IVTOB+ICONOGRAPHY+TEU_AREF",
     {
       params: {
-        query: `cql.allIndexes all ${query}`,
+        query: `${answersToIndices(answer)} all ${query}`,
         queryType: "cql",
         startRecord: 1,
         maximumRecords: 10,
@@ -29,5 +43,7 @@ export const getItems = async (
       },
     }
   );
-  return result.data.records && result.data.records.record ? result.data.records.record : [];
+  return result.data.records && result.data.records.record
+    ? result.data.records.record
+    : [];
 };

@@ -192,6 +192,5 @@ export function convert(item: ItemMetainfo): string {
 
   return `@${recordName}{tag,
     ${Object.entries(fieldValuesMap).map(([key, value]) => `${key} = ${value},\n`).join()}
-    lang=ru 
-}`;
+    lang=ru\n}`;
 }
